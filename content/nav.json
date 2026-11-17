@@ -1,0 +1,76 @@
+[
+ {"id":"getting-started","title":"Getting Started","items":[
+  {"title":"Documentation Home","slug":""},
+  {"title":"Introduction to Ovia Labs","slug":"introduction"},
+  {"title":"Ecosystem Overview","slug":"ecosystem"},
+  {"title":"Current Development Status","slug":"status"},
+  {"title":"Understanding Web3 Security","slug":"web3-security"}
+ ]},
+ {"id":"whitepaper","title":"Official Whitepaper","items":[
+  {"title":"About the Whitepaper","slug":"whitepaper"},
+  {"title":"Executive Summary","slug":"whitepaper/executive-summary"},
+  {"title":"The Web3 Security Problem","slug":"whitepaper/problem"},
+  {"title":"The Ovia Labs Ecosystem","slug":"whitepaper/ecosystem"},
+  {"title":"Ovia Protect: Product Vision","slug":"whitepaper/ovia-protect"},
+  {"title":"Ovia Protect: Technical Architecture","slug":"whitepaper/technical-architecture"},
+  {"title":"Security, Privacy and Limitations","slug":"whitepaper/security-privacy-limitations"},
+  {"title":"Ovia Network: Verification Infrastructure","slug":"whitepaper/ovia-network"},
+  {"title":"OVIA Token: Potential Ecosystem Utility","slug":"whitepaper/ovia-token"},
+  {"title":"Development Roadmap","slug":"whitepaper/roadmap"},
+  {"title":"Adoption and Sustainability","slug":"whitepaper/adoption-sustainability"},
+  {"title":"Risks and Open Questions","slug":"whitepaper/risks-open-questions"},
+  {"title":"Long-Term Vision","slug":"whitepaper/long-term-vision"}
+ ]},
+ {"id":"protect","title":"Ovia Protect","items":[
+  {"title":"Overview","slug":"protect"},
+  {"title":"Problem Definition","slug":"protect","href":"/protect#problem-definition"},
+  {"title":"Proposed User Experience","slug":"protect/user-experience"},
+  {"title":"Product Scope","slug":"protect/scope"},
+  {"title":"Wallet Permissions and Approvals","slug":"protect/approvals"},
+  {"title":"Technical Design","slug":"protect/technical-design"},
+  {"title":"Security Considerations","slug":"protect/security"},
+  {"title":"MVP Development Status","slug":"protect/scope","href":"/protect/scope#mvp-development-status"},
+  {"title":"Known Limitations","slug":"protect/security","href":"/protect/security#known-limitations"}
+ ]},
+ {"id":"network","title":"Ovia Network","items":[
+  {"title":"Overview","slug":"network"},
+  {"title":"Long-Term Vision","slug":"network","href":"/network#long-term-vision"},
+  {"title":"Proposed Verification Model","slug":"network","href":"/network#proposed-verification-model"},
+  {"title":"Research Questions","slug":"network","href":"/network#research-questions"},
+  {"title":"Technical Challenges","slug":"network","href":"/network#technical-challenges"},
+  {"title":"Development Dependencies","slug":"network","href":"/network#development-dependencies"}
+ ]},
+ {"id":"token","title":"OVIA Token","items":[
+  {"title":"Overview","slug":"token"},
+  {"title":"Potential Ecosystem Role","slug":"token","href":"/token#potential-ecosystem-role"},
+  {"title":"Token Design Considerations","slug":"token","href":"/token#token-design-considerations"},
+  {"title":"Open Economic Questions","slug":"token","href":"/token#open-economic-questions"},
+  {"title":"Regulatory Considerations","slug":"token","href":"/token#regulatory-considerations"},
+  {"title":"Current Status","slug":"token","href":"/token#current-status"}
+ ]},
+ {"id":"roadmap","title":"Roadmap","items":[
+  {"title":"Roadmap Overview","slug":"roadmap"},
+  {"title":"Current Phase","slug":"roadmap","href":"/roadmap#current-phase"},
+  {"title":"Ovia Protect MVP","slug":"roadmap","href":"/roadmap#ovia-protect-mvp"},
+  {"title":"Future Product Development","slug":"roadmap","href":"/roadmap#future-product-development"},
+  {"title":"Ovia Network Research","slug":"roadmap","href":"/roadmap#ovia-network-research"},
+  {"title":"OVIA Token Feasibility","slug":"roadmap","href":"/roadmap#ovia-token-feasibility"},
+  {"title":"Milestones and Dependencies","slug":"roadmap","href":"/roadmap#milestones-and-dependencies"}
+ ]},
+ {"id":"developers","title":"Developers","items":[
+  {"title":"Developer Overview","slug":"developers"},
+  {"title":"Architecture Concepts","slug":"developers","href":"/developers#architecture-concepts"},
+  {"title":"Integration Opportunities","slug":"developers","href":"/developers#integration-opportunities"},
+  {"title":"API and SDK Status","slug":"developers","href":"/developers#api-and-sdk-status"},
+  {"title":"Technical References","slug":"developers","href":"/developers#technical-references"}
+ ]},
+ {"id":"resources","title":"Resources","items":[
+  {"title":"Glossary","slug":"resources/glossary"},
+  {"title":"Frequently Asked Questions","slug":"resources/faq"},
+  {"title":"Security Disclosures","slug":"resources/security-disclosures"},
+  {"title":"References","slug":"resources/references"},
+  {"title":"Documentation Changelog","slug":"resources/changelog"},
+  {"title":"Legal and Technical Disclaimers","slug":"resources/disclaimers"},
+  {"title":"Applicant Privacy Notice","slug":"resources/privacy"}
+ ]}
+]

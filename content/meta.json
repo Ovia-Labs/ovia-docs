@@ -1,0 +1,16 @@
+{
+ "docsVersion":"0.1",
+ "updated":"2026-11-17",
+ "description":"Official Ovia Labs documentation: the whitepaper, roadmap and documentation for Ovia Protect, Ovia Network and the proposed OVIA Token.",
+ "whitepaper":{"version":"0.1","status":"Draft","publication":"Initial Documentation Release","date":"November 2026","updated":"2026-11-17"},
+ "components":[
+  {"name":"Ovia Labs","status":"in-progress","today":"An independent, early-stage initiative. Brand, website and documentation are prepared; the new website and these docs are not yet deployed."},
+  {"name":"Ovia Protect","status":"prd","today":"Requirements are being written. A first feasibility test (PRD-010) has been completed. No product code has been released."},
+  {"name":"Ovia Network","status":"future","today":"A research direction. There is no specification, code, network or verifier set."},
+  {"name":"OVIA Token","status":"proposed","today":"An exploratory concept. No token, contract, supply, allocation or launch plan exists."},
+  {"name":"Developer API and SDK","status":"not-specified","today":"No public API, SDK or integration interface exists or has been specified."}
+ ],
+ "revisions":[
+  {"version":"0.1","date":"2026-11-17","status":"Draft","changes":"Initial documentation release: whitepaper v0.1 (12 chapters), Ovia Protect, Ovia Network and OVIA Token documentation, roadmap, developer overview and resources."}
+ ]
+}

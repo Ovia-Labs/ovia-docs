@@ -1,8 +1,147 @@
 {
-  "rewrites": [
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/start-here",
+      "destination": "/introduction",
+      "permanent": true
+    },
+    {
+      "source": "/what-is-ovia",
+      "destination": "/introduction",
+      "permanent": true
+    },
+    {
+      "source": "/why-ovia-labs",
+      "destination": "/introduction",
+      "permanent": true
+    },
+    {
+      "source": "/why-we-build",
+      "destination": "/introduction",
+      "permanent": true
+    },
+    {
+      "source": "/vision",
+      "destination": "/whitepaper/long-term-vision",
+      "permanent": true
+    },
+    {
+      "source": "/products",
+      "destination": "/ecosystem",
+      "permanent": true
+    },
+    {
+      "source": "/problem",
+      "destination": "/whitepaper/problem",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/resources/faq",
+      "permanent": true
+    },
+    {
+      "source": "/disclaimer",
+      "destination": "/resources/disclaimers",
+      "permanent": true
+    },
+    {
+      "source": "/building-in-public",
+      "destination": "/resources/changelog",
+      "permanent": true
+    },
+    {
+      "source": "/contributors",
+      "destination": "https://ovialabs.xyz/join",
+      "permanent": true
+    },
+    {
+      "source": "/chartlabs-pulse",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/protocol-overview",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-it-works",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/security",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/architecture",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/solution",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/trust-infrastructure",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "headers": [
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,28 @@
+/* Ovia Labs — shared brand tokens, identical on ovialabs.xyz and docs.ovialabs.xyz.
+   This file is a copy of ovia-website/src/brand.css: keep both copies in sync.
+   Colours, type and radii live here. */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:200 800;font-display:swap;src:url('/fonts/bricolage-grotesque-latin.woff2') format('woff2')}
+
+/* ---------- tokens ---------- */
+html{
+ --paper:#f2f2f8;--surface:#ffffff;--text:#0b0c10;--muted:#565864;--line:#d9d9e6;--soft:#e7e7f1;
+ --indigo:#5357e8;--accent:#4a4ee0;--yellow:#ffe14a;--mint:#8fe3c0;--coral:#ff8a73;
+ --ink:#0b0c10;--onInk:#f3f3f8;--inkField:#0b0c10;
+ --warn:#b4430f;--calm:#0f7a55;
+ --hl:var(--yellow);--hlText:inherit;
+ --display:'Bricolage Grotesque','Inter',system-ui,sans-serif;
+ --body:Inter,system-ui,Arial,sans-serif;
+ --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+ --pad:clamp(18px,5vw,72px);--sec:clamp(84px,11vw,168px);
+ --r-s:10px;--r-m:18px;--r-l:clamp(24px,3.2vw,44px);
+ --ease:cubic-bezier(.2,.8,.2,1);
+ color-scheme:light;
+}
+html[data-theme=dark]{
+ --paper:#0c0d14;--surface:#171926;--text:#f1f1f6;--muted:#a3a5b4;--line:#2b2e40;--soft:#1c1e2c;
+ --accent:#9a9dff;--inkField:#16173a;
+ --warn:#ff9f7a;--calm:#7fdcb4;
+ --hl:color-mix(in srgb,var(--yellow) 20%,transparent);--hlText:var(--yellow);
+ color-scheme:dark;
+}
