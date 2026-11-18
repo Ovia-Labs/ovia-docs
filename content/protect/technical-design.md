@@ -1,32 +1,36 @@
 ---
 title: Technical Design
-description: The proposed Ovia Protect technical design, covering discovery versus verification, RPC methods, the PRD-010 findings and the open decisions.
-status: prd
+description: How an Ovia Protect beta scan works, covering the pinned block, discovery via Approval events, verification with allowance(), labels and data sources.
+status: beta
 related: [whitepaper/technical-architecture, protect/scope, developers]
 ---
 
-> [!PROPOSAL] Proposed design
-> No Ovia Protect code is deployed. The full rationale is in [whitepaper chapter 5](/whitepaper/technical-architecture).
+> [!STATUS] Describes the public beta
+> The background and the options considered are in [whitepaper chapter 5](/whitepaper/technical-architecture).
 
-## Two steps: discover, then verify
+## Runs in the browser
 
-| Step | Question | Method | Status |
-|---|---|---|---|
-| Discover | Which (token, spender) pairs might this address have approved? | Indexed `Approval` events from a source still to be selected | {{status:not-specified}} |
-| Verify | Is the allowance for this pair non-zero right now? | `eth_call` to `allowance(owner, spender)` at a pinned block | {{status:completed}} feasibility tested |
+The beta is a static web app. A scan runs entirely in the user’s browser, which talks directly to public Ethereum RPC providers. Ovia Labs does not operate a server for scans and stores nothing.
 
-Only verified, non-zero allowances are displayed. A discovery source can therefore cause missed approvals, but cannot cause a wrong allowance to be shown.
+## Four steps
 
-## PRD-010 findings
+| Step | What happens | Method |
+|---|---|---|
+| 1. Pin a block | Read the latest block number and fix every check to that block, so all results describe the same moment | `eth_blockNumber` |
+| 2. Find candidates | Search Ethereum’s history for `Approval` events where the address is the owner. These only show that an approval was given at some point | `eth_getLogs` on the ERC-20 `Approval` event, filtered by owner |
+| 3. Verify every one | For each token and spender, read the current allowance on the token contract at the pinned block. Only a non-zero answer is shown as active | `eth_call` to `allowance(owner, spender)` |
+| 4. Label facts | Tokens on Ovia’s curated list are shown as recognized; known spenders are named. Everything else is unrecognized, and token names are self-reported by the contract | Curated lists in the app |
 
-PRD-010 tested whether the constraints (free, no keys, no database, read-only) can be met.
+A discovery source can therefore cause missed approvals, but cannot cause a wrong allowance to be shown: every displayed value comes from the token contract itself at a block the user can see.
 
-- A free public Ethereum RPC endpoint returned correct `eth_call` allowance results and accepted batched requests.
-- The same endpoint limits `eth_getLogs` to 100-block ranges, making full-history discovery impractical (on the order of 264,000 requests per wallet).
-- A free approval-data API was compared with on-chain ground truth for 7 wallets with 10 known active allowances. It found none of them, and it publishes no terms of use. Result: rejected.
-- Permit2 sub-allowances were not tested.
+## Data sources
 
-Vendors are not named in public documentation; the findings concern the specific endpoints tested at the time.
+| Purpose | Provider | Fallback |
+|---|---|---|
+| Historical `Approval` event search | Tenderly public Ethereum gateway | MEV Blocker RPC |
+| Current allowances, token details, contract code | Alchemy public Ethereum endpoint | None |
+
+All are keyless public endpoints. Requests contain the wallet address being scanned and, like any web request, the user’s IP address. See [Security & privacy](/protect/security).
 
 ## Verification call
 
@@ -37,17 +41,22 @@ eth_call {
 } at block <N>
 ```
 
-The result is a 256-bit unsigned integer. Zero means no active allowance. The maximum value (2²⁵⁶ − 1) is treated as unlimited.
+The result is a 256-bit unsigned integer. Zero means no active allowance. The maximum value (2²⁵⁶ − 1) is shown as unlimited.
+
+## What is counted, not hidden
+
+- **Inactive approvals:** an `Approval` event was found but the current allowance is zero (used up, reset or revoked).
+- **Unreadable contracts:** the token contract did not return a valid ERC-20 allowance.
+
+## PRD-010 findings
+
+PRD-010 tested whether the constraints (free, no keys, no database, read-only) can be met.
+
+- A free public Ethereum RPC endpoint returned correct `eth_call` allowance results and accepted batched requests.
+- The same endpoint limits `eth_getLogs` to 100-block ranges, making full-history discovery through it impractical. The beta uses a different public gateway for event searches.
+- A free approval-data API was compared with on-chain ground truth for 7 wallets with 10 known active allowances. It found none of them, and it publishes no terms of use. Result: rejected.
+- Permit2 sub-allowances were not tested.
 
 ## Handling untrusted token data
 
-Names, symbols and decimals are read from token contracts and may be malformed or deliberately misleading. They are escaped, shown alongside the contract address, and never used to decide trust.
-
-## Open design decisions
-
-- Discovery source or combination.
-- Browser-only execution or a thin stateless proxy.
-- Permit2 sub-allowance support.
-- Spender labelling source.
-
-See [whitepaper chapter 5](/whitepaper/technical-architecture#open-architectural-decisions) for the options.
+Names, symbols and decimals are read from token contracts and may be malformed or deliberately misleading. They are escaped, shown alongside the contract address, and never used to decide trust. Tokens not on the curated list are grouped separately and labelled as self-reported.

@@ -1,60 +1,167 @@
 {
- "reviewed":"17 November 2026",
- "note":"Phases describe the intended order of work and the conditions for moving on. They are planning categories, not delivery commitments, and carry no dates. A milestone is marked Completed only when there is evidence for it.",
- "legend":["completed","in-progress","planned","research","conditional"],
- "legendText":{
-  "completed":"Done, with evidence",
-  "in-progress":"Work has started",
-  "planned":"Intended next, not started",
-  "research":"Open investigation, no commitment to build",
-  "conditional":"Only happens if earlier results justify it"
+ "reviewed": "18 November 2026",
+ "note": "Phases describe the intended order of work and the conditions for moving on. They are planning categories, not delivery commitments, and carry no dates. A milestone is marked Completed only when there is evidence for it.",
+ "legend": [
+  "completed",
+  "in-progress",
+  "planned",
+  "research",
+  "conditional"
+ ],
+ "legendText": {
+  "completed": "Done, with evidence",
+  "in-progress": "Work has started",
+  "planned": "Intended next, not started",
+  "research": "Open investigation, no commitment to build",
+  "conditional": "Only happens if earlier results justify it"
  },
- "phases":[
-  {"id":"phase-01","number":"01","title":"Foundation & Product Definition","status":"in-progress",
-   "summary":"Brand, website, documentation, product research and the Ovia Protect requirements.",
-   "gate":"An approved PRD, including a validated way to discover approvals at zero additional cost.",
-   "milestones":[
-    {"title":"Ovia Labs brand identity","status":"completed","evidence":"Logo set and brand system in use across the website and this documentation."},
-    {"title":"Website repositioned for crypto security","status":"in-progress","evidence":"New ovialabs.xyz built and tested locally. Not yet deployed."},
-    {"title":"Documentation platform and whitepaper v0.1","status":"in-progress","evidence":"This site. Prepared for docs.ovialabs.xyz, not yet deployed."},
-    {"title":"Ovia Protect product requirements (PRD)","status":"in-progress","detail":"Requirements are tracked as numbered work items."},
-    {"title":"PRD-010: approval discovery feasibility test","status":"completed","evidence":"Validation report dated 17 November 2026. On-chain verification through a free public Ethereum RPC: GO. The free third-party approval API tested as a discovery source: NO-GO."},
-    {"title":"Select an approval discovery approach","status":"planned","detail":"Evaluate further free sources and compare their results with on-chain state.","dependsOn":"PRD-010 findings"}
-   ]},
-  {"id":"phase-02","number":"02","title":"Ovia Protect MVP Development","status":"planned",
-   "summary":"Architecture validation, implementation, internal testing and security review.",
-   "gate":"Scanner results reproduce on-chain allowance values at a recorded block, and known gaps are shown in the product.",
-   "milestones":[
-    {"title":"Architecture validation","status":"planned","dependsOn":"A selected discovery approach"},
-    {"title":"Read-only ERC-20 approval scanner (Ethereum Mainnet)","status":"planned","detail":"Public address input, no wallet connection, no signatures, no stored scans."},
-    {"title":"Internal testing against on-chain ground truth","status":"planned"},
-    {"title":"Security review before any public release","status":"planned","detail":"Scope and reviewer not yet decided."}
-   ]},
-  {"id":"phase-03","number":"03","title":"Protect Validation & Product Expansion","status":"planned",
-   "summary":"Testing with users, improving reliability, reviewing limitations and evaluating further functionality.",
-   "gate":"Evidence that people understand the results and that the data stays accurate under real use.",
-   "milestones":[
-    {"title":"Testing with early users","status":"planned"},
-    {"title":"Reliability and limitation review","status":"planned"},
-    {"title":"Permit2 and NFT operator approvals","status":"conditional","detail":"Evaluated after the ERC-20 scanner is proven."},
-    {"title":"Additional networks","status":"conditional"},
-    {"title":"Optional wallet connection","status":"conditional","detail":"Only if it adds clear value and passes a security review."}
-   ]},
-  {"id":"phase-04","number":"04","title":"Ovia Network Research","status":"research",
-   "summary":"Exploring verification models, architecture, trust assumptions and feasibility.",
-   "gate":"A written feasibility assessment, published for review.",
-   "milestones":[
-    {"title":"Verification model exploration","status":"research"},
-    {"title":"Trust and threat model","status":"research"},
-    {"title":"Feasibility assessment","status":"research","dependsOn":"Real-world experience from Ovia Protect"}
-   ]},
-  {"id":"phase-05","number":"05","title":"Ecosystem Expansion & Token Feasibility","status":"conditional",
-   "summary":"Evaluating whether broader network infrastructure and token mechanisms are technically, economically and legally justified.",
-   "gate":"A positive technical, economic and legal assessment. A negative outcome is an acceptable result.",
-   "milestones":[
-    {"title":"Network build decision","status":"conditional","dependsOn":"Phase 04 feasibility assessment"},
-    {"title":"Token necessity assessment","status":"conditional","dependsOn":"Network build decision"},
-    {"title":"Legal and regulatory review","status":"conditional"}
-   ]}
+ "phases": [
+  {
+   "id": "phase-01",
+   "number": "01",
+   "title": "Foundation & Product Definition",
+   "status": "completed",
+   "summary": "Brand, website, documentation, product research and the Ovia Protect requirements.",
+   "gate": "Approved requirements for Ovia Protect V1, including a selected way to discover approvals at zero additional cost.",
+   "milestones": [
+    {
+     "title": "Ovia Labs brand identity",
+     "status": "completed",
+     "evidence": "Logo set and brand system in use across the website and this documentation."
+    },
+    {
+     "title": "Website repositioned for crypto security",
+     "status": "completed",
+     "evidence": "Live at ovialabs.xyz."
+    },
+    {
+     "title": "Documentation platform and whitepaper v0.1",
+     "status": "completed",
+     "evidence": "This site, live at docs.ovialabs.xyz."
+    },
+    {
+     "title": "Ovia Protect V1 requirements (PRDs)",
+     "status": "completed",
+     "evidence": "V1 was built from them and released as the public beta."
+    },
+    {
+     "title": "PRD-010: approval discovery feasibility test",
+     "status": "completed",
+     "evidence": "Validation report dated 17 November 2026. On-chain verification through a free public Ethereum RPC: GO. The free third-party approval API tested as a discovery source: NO-GO."
+    },
+    {
+     "title": "Select an approval discovery approach",
+     "status": "completed",
+     "evidence": "Historical Approval events through a public RPC gateway with a fallback endpoint, every result verified with allowance() at a pinned block."
+    }
+   ]
+  },
+  {
+   "id": "phase-02",
+   "number": "02",
+   "title": "Ovia Protect V1 & Public Beta",
+   "status": "completed",
+   "summary": "Architecture, implementation and release of the first version as a public beta.",
+   "gate": "A working public beta that verifies every displayed allowance on-chain at a recorded block and shows its known gaps.",
+   "milestones": [
+    {
+     "title": "Browser-only architecture",
+     "status": "completed",
+     "evidence": "The beta runs entirely in the browser against public RPC endpoints. No Ovia server, no stored scans."
+    },
+    {
+     "title": "Read-only ERC-20 approval scanner (Ethereum Mainnet)",
+     "status": "completed",
+     "evidence": "Public beta live at protect.ovialabs.xyz since 18 November 2026."
+    }
+   ]
+  },
+  {
+   "id": "phase-03",
+   "number": "03",
+   "title": "Protect Validation & Product Expansion",
+   "status": "in-progress",
+   "summary": "Learn from the beta, add revoking with the user’s own wallet, measure and publish limitations, and arrange an independent review.",
+   "gate": "Ovia Protect leaves beta: coverage measured and published, independent review completed.",
+   "milestones": [
+    {
+     "title": "Public beta with early users",
+     "status": "in-progress",
+     "evidence": "Beta open to everyone since 18 November 2026."
+    },
+    {
+     "title": "Revoke approvals inside Ovia Protect, with your own wallet",
+     "status": "planned",
+     "detail": "Next step. Ovia Protect would ask your wallet to sign approve(spender, 0); it never holds keys or sends transactions for you."
+    },
+    {
+     "title": "Accuracy and coverage testing, results published",
+     "status": "planned",
+     "detail": "Compare results with an independent source and publish the measured coverage."
+    },
+    {
+     "title": "Independent security review",
+     "status": "planned",
+     "detail": "Not done yet. Required before Ovia Protect leaves beta."
+    },
+    {
+     "title": "Permit2 and NFT operator approvals",
+     "status": "conditional",
+     "dependsOn": "What the beta shows"
+    },
+    {
+     "title": "Additional networks",
+     "status": "conditional",
+     "dependsOn": "What the beta shows"
+    }
+   ]
+  },
+  {
+   "id": "phase-04",
+   "number": "04",
+   "title": "Ovia Network Research",
+   "status": "research",
+   "summary": "Exploring verification models, architecture, trust assumptions and feasibility.",
+   "gate": "A written feasibility assessment, published for review.",
+   "milestones": [
+    {
+     "title": "Verification model exploration",
+     "status": "research"
+    },
+    {
+     "title": "Trust and threat model",
+     "status": "research"
+    },
+    {
+     "title": "Feasibility assessment",
+     "status": "research",
+     "dependsOn": "Real-world experience from Ovia Protect"
+    }
+   ]
+  },
+  {
+   "id": "phase-05",
+   "number": "05",
+   "title": "Ecosystem Expansion & Token Feasibility",
+   "status": "conditional",
+   "summary": "Evaluating whether broader network infrastructure and token mechanisms are technically, economically and legally justified.",
+   "gate": "A positive technical, economic and legal assessment. A negative outcome is an acceptable result.",
+   "milestones": [
+    {
+     "title": "Network build decision",
+     "status": "conditional",
+     "dependsOn": "Phase 04 feasibility assessment"
+    },
+    {
+     "title": "Token necessity assessment",
+     "status": "conditional",
+     "dependsOn": "Network build decision"
+    },
+    {
+     "title": "Legal and regulatory review",
+     "status": "conditional"
+    }
+   ]
+  }
  ]
 }

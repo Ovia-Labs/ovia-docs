@@ -52,4 +52,4 @@ For NFTs, the common permission is `setApprovalForAll`, which lets an *operator*
 > [!LIMITATION] What approval checks cannot do
 > Reviewing approvals reduces one kind of risk. It does not protect against a compromised seed phrase, a malicious transaction you sign directly, a fake token or a bug in a contract you use today. Removing an approval does not recover tokens that were already taken.
 
-Ovia Protect is being designed to make the approval part of this picture easier to see. See [Ovia Protect](/protect).
+Ovia Protect, now in public beta, makes the approval part of this picture easier to see. See [Ovia Protect](/protect).

@@ -6,11 +6,11 @@ related: [protect/security, resources/security-disclosures, whitepaper/risks-ope
 ---
 
 > [!WARNING] No audits, no guarantees
-> Ovia Protect has not been built, audited or independently reviewed. Nothing in this chapter is a security guarantee. It describes principles and requirements that the product must meet before release.
+> The Ovia Protect beta has not been audited or independently reviewed. Nothing in this chapter is a security guarantee. It describes principles and requirements that the product must meet before release.
 
 ## Security design principles
 
-1. **Least capability.** A tool that cannot sign cannot be tricked into signing. The first version has no wallet connection and no transaction capability.
+1. **Least capability.** A tool that cannot sign cannot be tricked into signing. The beta has no wallet connection and no transaction capability.
 2. **Verify before display.** Only on-chain values read at a recorded block support security-relevant statements.
 3. **Fail visibly.** When data is missing, delayed or contradictory, the product says so instead of guessing.
 4. **No safe verdicts.** The product never declares a wallet or contract safe.
@@ -22,7 +22,7 @@ Inspecting a public address is inherently low-risk for the user: it requires no 
 
 ## Wallet connection risks
 
-Wallet connection is excluded from the first version. If it is ever added, it would bring new risks: users becoming accustomed to approving requests from the product, spoofed versions of the site asking for signatures, and session handling. Any future connection must be read-only, request no signatures beyond what is strictly needed, and pass a dedicated security review.
+The beta has no wallet connection. Revoking inside Ovia Protect, the next planned step, would add one, which brings new risks: users becoming accustomed to approving requests from the product, spoofed versions of the site asking for signatures, and session handling. Any future connection must be read-only, request no signatures beyond what is strictly needed, and pass a dedicated security review.
 
 ## Data handling and privacy
 
@@ -31,7 +31,7 @@ Wallet connection is excluded from the first version. If it is ever added, it wo
 | Wallet address entered | Processed, not stored | Needed to run the check. Public by nature, but linkable to a person. |
 | Scan results | Not stored | Shown to the user and discarded. |
 | IP address | Seen by infrastructure providers | Unavoidable for any web request; see third-party dependencies. |
-| Accounts, emails, cookies for tracking | No | The first version has no accounts. |
+| Accounts, emails, cookies | No | The beta has no accounts and uses no cookies. |
 
 Even though addresses are public, the act of checking an address can reveal interest in it. This is why scans are not stored and why execution placement is treated as a privacy decision.
 
@@ -79,7 +79,7 @@ Ovia Labs welcomes reports of vulnerabilities in its website, documentation and 
 
 ## Security validation requirements before release
 
-Before any public release of Ovia Protect, the following are required:
+Version 0.1 of this paper listed these as requirements before any public release. Ovia Protect was released as a public beta first, so they now apply before Ovia Protect leaves beta:
 
 1. A written threat model reviewed against the final architecture.
 2. Accuracy testing: displayed allowances match `eth_call` results at the recorded block for a published test set of addresses.

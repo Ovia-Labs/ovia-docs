@@ -5,8 +5,8 @@ status: draft
 related: [protect/technical-design, developers, whitepaper/security-privacy-limitations]
 ---
 
-> [!PROPOSAL] Nothing in this chapter is deployed
-> This chapter describes architecture options and a proposed direction. No Ovia Protect infrastructure is running. The only implemented code to date is the disposable script used for the PRD-010 feasibility test.
+> [!STATUS] Updated for the public beta
+> This chapter describes the architecture options that were considered and, in its last section, the choices made for the Ovia Protect public beta. The beta’s current design is documented in [Technical design](/protect/technical-design).
 
 ## Design constraints
 
@@ -18,7 +18,7 @@ The architecture is shaped by the working constraints used during validation:
 - **Read-only:** no wallet connection, signatures or transactions.
 - **Ethereum Mainnet** first.
 
-These constraints are deliberate. They limit what the first version can do, but they keep it cheap to run, simple to audit and free of user data.
+These constraints are deliberate. They limit what the beta can do, but they keep it cheap to run, simple to audit and free of user data.
 
 ## Discovery and verification are different problems
 
@@ -60,7 +60,7 @@ Full discovery requires an index of `Approval` events by owner across all token 
 | Paid indexer | Reliable, complete | Ongoing cost, API keys | Conflicts with zero cost |
 | Known-pairs probing | Fully on-chain | Only finds approvals to listed spenders and tokens | Fits, but incomplete by design |
 
-The next PRD step is to evaluate further free discovery sources in the same way PRD-010 did: compare their output with on-chain ground truth, review their terms of use, and measure coverage. Known-pairs probing (checking popular tokens against popular spenders) is a possible fallback that is honest about being incomplete.
+For the beta, discovery uses a public RPC gateway that accepts full-history `eth_getLogs` queries for `Approval` events, with a second public endpoint as fallback. Its coverage still has to be measured against an independent source and published.
 
 ## Data normalisation
 
@@ -85,11 +85,11 @@ This is an illustrative schema, not a published interface. Key decisions are to 
 
 <figure class="diagram">
 <svg viewBox="0 0 720 300" role="img" aria-labelledby="arch-t arch-d">
-<title id="arch-t">Proposed Ovia Protect data flow</title>
-<desc id="arch-d">The user enters a public address in the browser. Candidate approvals come from a discovery source still to be selected. Each candidate is verified with eth_call on a public Ethereum RPC at a pinned block. Verified results are normalised and shown with their block number. No scan is stored.</desc>
+<title id="arch-t">Ovia Protect beta data flow</title>
+<desc id="arch-d">The user enters a public address in the browser. Candidate approvals come from a historical Approval event search on a public RPC gateway. Each candidate is verified with eth_call on a public Ethereum RPC at a pinned block. Verified results are normalised and shown with their block number. No scan is stored.</desc>
 <defs><marker id="arch-ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L8,4 L0,8z" class="arrowHead"/></marker></defs>
 <rect x="10" y="20" width="190" height="80" rx="12" class="boxA"/><text x="26" y="50" class="t">Browser</text><text x="26" y="70" class="s">Public address in,</text><text x="26" y="86" class="s">explained results out</text>
-<rect x="265" y="20" width="190" height="80" rx="12" class="boxD"/><text x="281" y="50" class="t">Discovery source</text><text x="281" y="70" class="s">Candidate pairs</text><text x="281" y="86" class="tag">NOT YET SELECTED</text>
+<rect x="265" y="20" width="190" height="80" rx="12" class="boxD"/><text x="281" y="50" class="t">Discovery source</text><text x="281" y="70" class="s">Candidate pairs</text><text x="281" y="86" class="tag">PUBLIC RPC GATEWAY</text>
 <rect x="520" y="20" width="190" height="80" rx="12" class="box"/><text x="536" y="50" class="t">Public Ethereum RPC</text><text x="536" y="70" class="s">eth_call allowance()</text><text x="536" y="86" class="s">at a pinned block</text>
 <rect x="265" y="180" width="190" height="80" rx="12" class="box"/><text x="281" y="210" class="t">Verify &amp; normalise</text><text x="281" y="230" class="s">Drop zero allowances,</text><text x="281" y="246" class="s">flag unlimited ones</text>
 <path d="M202 60 H261" class="ln" marker-end="url(#arch-ah)"/>
@@ -97,22 +97,22 @@ This is an illustrative schema, not a published interface. Key decisions are to 
 <path d="M457 205 Q615 205 615 104" class="ln" marker-end="url(#arch-ah)"/>
 <path d="M263 240 Q105 240 105 104" class="ln" marker-end="url(#arch-ah)"/>
 <text x="470" y="150" class="s">verify each pair</text><text x="40" y="160" class="s">results + block number</text>
-<text x="10" y="290" class="s">Where this logic runs (in the browser or a thin stateless proxy) is an open decision. Nothing is stored.</text>
+<text x="10" y="290" class="s">In the beta, all of this runs in the browser. Nothing is stored.</text>
 </svg>
-<figcaption>{{status:proposed}} Proposed architecture. Not implemented.</figcaption>
+<figcaption>{{status:beta}} Architecture of the public beta.</figcaption>
 </figure>
 
-Two placements are being considered:
+Two placements were considered:
 
 - **Browser-only.** The page calls public endpoints directly. This needs no server and keeps addresses off Ovia Labs infrastructure, but it exposes users’ IP addresses to third-party endpoints, depends on CORS support, and shares rate limits per user.
 - **Thin stateless proxy.** A small serverless function forwards requests. This allows caching of token metadata, consistent rate limiting and hiding of third-party details, at the cost of routing addresses through Ovia Labs infrastructure (without storing them).
 
-The choice is open and will be documented in the PRD.
+The beta is browser-only. The privacy notice in the app names the RPC providers that receive requests.
 
 ## Security boundaries
 
 - **No secrets in the client.** If an optional key is ever used, it stays server-side.
-- **No signing capability.** The product never constructs or requests transactions or signatures in its first version.
+- **No signing capability.** The product never constructs or requests transactions or signatures in the beta.
 - **Untrusted inputs.** Token names and symbols come from contracts and can be crafted to mislead (for example, a symbol imitating a well-known token). They are displayed as data, escaped, and never used as proof of identity.
 - **Third-party data is advisory.** Only verified on-chain values support the security claim; labels and metadata are marked as such.
 
@@ -123,11 +123,11 @@ The choice is open and will be documented in the PRD.
 - **Caching** is limited to non-personal data, such as token metadata, so that no scan history is created.
 - **Coverage over speed.** A slower result with clear coverage information is preferred over a fast result that hides gaps.
 
-## Open architectural decisions
+## Architectural decisions
 
-| Decision | Options | Status |
+| Decision | Options considered | Beta |
 |---|---|---|
-| Discovery source | Free indexer, explorer API, known-pairs probing, combination | {{status:not-specified}} |
-| Execution placement | Browser-only, stateless proxy | {{status:not-specified}} |
-| Permit2 support in MVP | Include, defer | {{status:not-specified}} |
-| Spender labelling source | Curated list, third-party labels, none | {{status:not-specified}} |
+| Discovery source | Free indexer, explorer API, known-pairs probing, public RPC log search | {{status:beta}} Public RPC gateway with fallback |
+| Execution placement | Browser-only, stateless proxy | {{status:beta}} Browser-only |
+| Permit2 sub-allowances | Include, defer | Deferred |
+| Spender and token labels | Curated list, third-party labels, none | {{status:beta}} Curated lists in the app |

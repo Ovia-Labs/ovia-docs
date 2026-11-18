@@ -25,7 +25,7 @@ We start here for three reasons:
 2. **It is tractable.** ERC-20 approvals follow a well-defined standard, and their current state can be read directly from the chain.
 3. **It teaches us what verification needs.** Building a scanner exposes exactly where public data is incomplete or where data sources disagree. That knowledge is the foundation for any later verification research.
 
-Ovia Protect is in the product requirements (PRD) phase. A first feasibility test, PRD-010, was completed on 17 November 2026. It confirmed that a free public Ethereum RPC endpoint can verify individual allowances, and that the free third-party discovery API tested was not reliable enough to use. Choosing a discovery approach is the next step.
+Ovia Protect has been in public beta since 18 November 2026 at [protect.ovialabs.xyz](https://protect.ovialabs.xyz). It was built from a series of product requirements, starting with a feasibility test (PRD-010) that confirmed public Ethereum RPC endpoints can verify allowances and rejected a free third-party discovery API. The beta runs entirely in the browser, verifies every displayed approval on-chain at a pinned block, and has not yet been independently reviewed. Revoking approvals from within Ovia Protect is the next planned step.
 
 ## The possible role of Ovia Network
 
@@ -39,8 +39,8 @@ An open verification network could need a way to coordinate and reward independe
 
 | Component | Status |
 |---|---|
-| Ovia Labs (brand, website, documentation) | {{status:in-progress}} Prepared, not yet deployed |
-| Ovia Protect | {{status:prd}} Requirements and feasibility testing |
+| Ovia Labs (brand, website, documentation) | {{status:live}} Website and documentation live |
+| Ovia Protect | {{status:beta}} ERC-20 approval scanner on Ethereum Mainnet |
 | Ovia Network | {{status:future}} Research direction |
 | OVIA Token | {{status:proposed}} Exploratory concept |
 

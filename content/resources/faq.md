@@ -7,19 +7,19 @@ related: [status, resources/glossary, resources/disclaimers]
 
 ## Can I use Ovia Protect today?
 
-No. Ovia Protect is in its PRD phase. There is no public app, beta or waitlist yet. Progress is tracked on the [Roadmap](/roadmap).
+Yes. Ovia Protect has been in public beta since 18 November 2026 at [protect.ovialabs.xyz](https://protect.ovialabs.xyz). It checks ERC-20 token approvals on Ethereum Mainnet. Paste a public wallet address; there is nothing to connect or sign.
 
 ## Will Ovia Protect ask me to connect my wallet?
 
-The first version is designed **not** to: you enter a public address, nothing more. It will never ask for a seed phrase, private key or signature. If something claiming to be Ovia Protect asks for these, it is not Ovia Labs.
+No. The beta only needs a public address. It never asks for a seed phrase, private key or signature. A planned later version will let you revoke approvals by connecting your own wallet, but scanning will stay possible without it. If something claiming to be Ovia Protect asks for these, it is not Ovia Labs.
 
 ## Will it tell me whether my wallet is safe?
 
-No. It is designed to show and explain verified approvals and to state what it could not check. Finding no approvals is not proof of safety.
+No. It shows verified approvals and states what it could not check. Finding no approvals is not proof of safety.
 
 ## How is this different from existing approval checkers?
 
-Established tools such as Etherscan’s approval checker and Revoke.cash already let users find and revoke approvals. Ovia Protect’s planned focus is on explanation, on showing the block and source behind every result, and on being explicit about coverage gaps. Whether that is useful enough is something Phase 03 is meant to test.
+Established tools such as Etherscan’s approval checker and Revoke.cash already let users find and revoke approvals. Ovia Protect focuses on explanation, on showing the block and source behind every result, and on being explicit about coverage gaps. Whether that is useful enough is something Phase 03 is meant to test.
 
 ## Is there an OVIA token?
 
@@ -31,7 +31,7 @@ A research concept for verifying security information through several independen
 
 ## Has Ovia Labs been audited?
 
-No. There is no product to audit yet. An independent review is a requirement before any public release of Ovia Protect.
+No. The Ovia Protect beta has not been independently reviewed or audited. An independent review is planned before it leaves beta.
 
 ## Does Ovia Labs have partners or investors?
 

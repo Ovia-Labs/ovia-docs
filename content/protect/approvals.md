@@ -42,8 +42,8 @@ The canonical Permit2 contract on Ethereum Mainnet is `0x000000000022D473030F116
 
 ## NFT operator approvals
 
-[ERC-721](https://eips.ethereum.org/EIPS/eip-721) and [ERC-1155](https://eips.ethereum.org/EIPS/eip-1155) include `setApprovalForAll(operator, true)`, which lets an operator move **every** token of that collection held by the owner. These are a different mechanism from ERC-20 allowances and are out of scope for the first version of Ovia Protect.
+[ERC-721](https://eips.ethereum.org/EIPS/eip-721) and [ERC-1155](https://eips.ethereum.org/EIPS/eip-1155) include `setApprovalForAll(operator, true)`, which lets an operator move **every** token of that collection held by the owner. These are a different mechanism from ERC-20 allowances and are not covered by the Ovia Protect beta.
 
 ## Account delegation
 
-[EIP-7702](https://eips.ethereum.org/EIPS/eip-7702) lets an externally owned account set code that runs on its behalf. A delegation to a malicious contract is a different and broader risk than a token approval. It is noted here for completeness and is out of scope for the first version.
+[EIP-7702](https://eips.ethereum.org/EIPS/eip-7702) lets an externally owned account set code that runs on its behalf. A delegation to a malicious contract is a different and broader risk than a token approval. It is noted here for completeness and is not covered by the Ovia Protect beta.

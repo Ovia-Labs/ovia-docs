@@ -1,37 +1,38 @@
 ---
 title: User Experience
-description: The planned Ovia Protect user flow, from entering a public address to understanding each approval and the limits of the check.
-status: prd
+description: How the Ovia Protect beta works for a user, from pasting a public address to reading each approval and the limits of the check.
+status: beta
 related: [protect, protect/scope]
 ---
 
-> [!PROPOSAL] Planned experience
-> This describes the intended flow from the PRD. Screens and wording will change during design and user testing.
+> [!STATUS] Describes the public beta
+> This is the flow in the beta at [protect.ovialabs.xyz](https://protect.ovialabs.xyz) as of 18 November 2026. Screens and wording may change as the beta develops.
 
 ## Principles
 
-- **One input.** A public address or ENS name. Nothing to install or connect.
-- **Explanation over alarm.** Results are written to help a decision, not to frighten.
-- **Visible certainty.** Every result shows what was checked, when and how.
+- **One input.** A public wallet address. Nothing to install, connect or sign.
+- **Facts, not scores.** Results show what the blockchain says. Ovia Protect does not calculate risk scores.
+- **Visible certainty.** Every result shows the block it was checked at and what was not covered.
 
-## Planned flow
+## The flow
 
-1. **Enter an address.** The interface reminds users that Ovia Protect never asks for a seed phrase, private key or signature.
-2. **Check runs.** The product finds candidate approvals and verifies each one on-chain. Progress is shown; if a source fails, that is shown too.
-3. **Results.** Each active approval appears as a row: token, spender, allowance (with “unlimited” called out), and the block the value was read at.
-4. **Explanation.** Opening a row explains, in plain language, what that spender can do with that token and why an application may have asked for it.
-5. **Coverage notice.** Every result page says what was covered and what was not, for example Permit2 sub-allowances or other networks.
-6. **Next steps.** Guidance on how to reduce an allowance using the user’s own wallet or an established revocation tool. The first version does not revoke anything itself.
+1. **Enter an address.** A 42-character `0x` address. ENS names are not supported yet. An example address is available to try the scanner without using your own.
+2. **Scan.** Ovia Protect fixes the check to the latest block, searches the wallet’s history for approvals and verifies each one on the token contract.
+3. **Summary.** The number of active approvals, how many are unlimited, and how many involve recognized or unrecognized tokens, with the wallet and the block number the check used.
+4. **Approvals.** Each active approval shows the token, the spender and the allowance. Unlimited allowances are marked as such. Spenders that Ovia recognizes are named; others are shown as an unknown contract with their address.
+5. **Recognized and unrecognized tokens.** Tokens on Ovia’s curated list are shown first. Approvals on other tokens are grouped separately, with a note that they may include spam airdrops and that their names are self-reported by the token contract.
+6. **What else was found.** Past approvals that are no longer active (used up, reset or revoked) and token contracts that could not be read are counted, so nothing disappears silently.
+7. **Next steps.** Each approval links to Revoke.cash. The beta explains that removing an approval means the wallet owner sends an `approve(spender, 0)` transaction, that Ovia Protect never sends transactions itself, and that users should check the address bar before connecting a wallet anywhere.
 
 ## Result states
 
-| State | Meaning | Wording principle |
+| State | What the user sees | Wording principle |
 |---|---|---|
-| Approvals found | Verified non-zero allowances exist | Explain each one; no verdict |
-| None found | No verified allowances among covered sources | “No active approvals found in the sources checked”, never “safe” |
-| Partial | Some sources or checks failed | Show what succeeded and what did not |
-| Failed | The check could not run | Plain error with a retry option |
+| Approvals found | Verified non-zero allowances, with the block number | Facts per approval; no verdict |
+| None found | No active approvals among what was checked | Never “safe” |
+| Partly readable | Approvals plus a count of contracts that could not be read | Say what could not be checked |
+| Failed | The scan could not complete | Plain error, so the user can try again |
 
-## Accessibility and language
+## Every result carries its limits
 
-The interface is planned to be fully keyboard-accessible, readable at high zoom and written in plain English, with technical detail available on request rather than shown by default.
+Each result repeats what the beta does not cover: NFT approvals, Permit2 sub-allowances, unused `permit()` signatures, other chains and tokens that do not emit standard `Approval` events. It also states that an approval is not proof of a problem and that no result means a wallet is safe.

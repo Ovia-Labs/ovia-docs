@@ -15,7 +15,7 @@ description: Explore the product vision, technical foundations, roadmap and rese
 </section>
 
 <ul class="cards" aria-label="The Ovia Labs ecosystem">
-<li><a href="/protect"><span class="status s-prd"><i aria-hidden="true"></i>PRD Phase</span><b>Ovia Protect</b><span class="d">The first product: a read-only tool to see which apps can still spend your tokens. Currently in the requirements phase.</span></a></li>
+<li><a href="/protect"><span class="status s-beta"><i aria-hidden="true"></i>Public Beta</span><b>Ovia Protect</b><span class="d">The first product: a read-only tool to see which apps can still spend your tokens. Live in public beta.</span></a></li>
 <li><a href="/network"><span class="status s-future"><i aria-hidden="true"></i>Future Concept</span><b>Ovia Network</b><span class="d">A proposed future verification infrastructure, where independent parties check the same security data.</span></a></li>
 <li><a href="/token"><span class="status s-proposed"><i aria-hidden="true"></i>Proposed</span><b>OVIA Token</b><span class="d">An exploratory ecosystem token concept. It does not exist, and creating it is not guaranteed.</span></a></li>
 </ul>
@@ -26,14 +26,14 @@ Ovia Labs is at an early stage. This table is the single source of truth for wha
 
 {{status-table}}
 
-Ovia Protect is the only component in active development. Its requirements are being written as numbered work items, and the first feasibility test (PRD-010) was completed on 17 November 2026. Read [Current Development Status](/status) for the evidence behind each entry.
+Ovia Protect is live in public beta since 18 November 2026 at [protect.ovialabs.xyz](https://protect.ovialabs.xyz), and is the only component in active development. Read [Current Development Status](/status) for the evidence behind each entry.
 
 ## Find your way around
 
 <ul class="sectionGrid">
 <li><a href="/introduction"><b>Getting Started</b><span>What Ovia Labs is, how the pieces fit together and what Web3 permissions are.</span></a></li>
-<li><a href="/whitepaper"><b>Official Whitepaper</b><span>Version 0.1: the full product and protocol vision, including risks and open questions.</span></a></li>
-<li><a href="/protect"><b>Ovia Protect</b><span>Problem, scope, proposed user experience, technical design and limitations.</span></a></li>
+<li><a href="/whitepaper"><b>Official Whitepaper</b><span>Version 0.2: the full product and protocol vision, including risks and open questions.</span></a></li>
+<li><a href="/protect"><b>Ovia Protect</b><span>Problem, beta scope, user experience, technical design and limitations.</span></a></li>
 <li><a href="/network"><b>Ovia Network</b><span>The verification research direction and the questions it has to answer first.</span></a></li>
 <li><a href="/token"><b>OVIA Token</b><span>Why a token might be considered, and the conditions that would have to be met.</span></a></li>
 <li><a href="/roadmap"><b>Roadmap</b><span>Five dependency-based phases with evidence-backed milestone statuses.</span></a></li>
@@ -42,4 +42,4 @@ Ovia Protect is the only component in active development. Its requirements are b
 </ul>
 
 > [!NOTE] How to read these docs
-> Ovia Labs separates what exists from what is planned. Pages and sections carry short status labels such as **PRD Phase**, **Proposed**, **Research** or **Not Yet Specified**. Anything described as a design, architecture or feature is a proposal unless a page says otherwise.
+> Ovia Labs separates what exists from what is planned. Pages and sections carry short status labels such as **Public Beta**, **Proposed**, **Research** or **Not Yet Specified**. Anything described as a design, architecture or feature is a proposal unless a page says otherwise.

@@ -10,12 +10,12 @@ related: [protect/technical-design, whitepaper/technical-architecture, resources
 
 ## Architecture concepts
 
-Ovia Protect’s proposed design separates two steps:
+The Ovia Protect beta separates two steps:
 
-- **Discovery:** finding candidate (token, spender) pairs for an owner, from indexed `Approval` events.
+- **Discovery:** finding candidate (token, spender) pairs for an owner, from historical `Approval` events.
 - **Verification:** reading `allowance(owner, spender)` with `eth_call` at a pinned block, so every displayed value can be reproduced by anyone with an Ethereum node.
 
-Results are proposed to be normalised into records that carry chain id, block, owner, token, spender, raw allowance (as a string), an unlimited flag and the data source. See [Technical design](/protect/technical-design) and [whitepaper chapter 5](/whitepaper/technical-architecture).
+Every check is fixed to one block. The beta runs entirely in the browser against public RPC endpoints; it has no backend and no API of its own. See [Technical design](/protect/technical-design) and [whitepaper chapter 5](/whitepaper/technical-architecture).
 
 ## Integration opportunities
 

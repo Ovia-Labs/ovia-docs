@@ -6,7 +6,7 @@ related: [whitepaper/roadmap, whitepaper/risks-open-questions]
 ---
 
 > [!PROPOSAL] Hypotheses, not results
-> Ovia Labs has no users, revenue, partners or integrations yet. This chapter sets out who the products are meant for and how the work could be sustained. Each item is a hypothesis to test.
+> Ovia Protect has been in public beta since 18 November 2026. Ovia Labs has no revenue, partners or integrations, and publishes no user figures. This chapter sets out who the products are meant for and how the work could be sustained. Each item is a hypothesis to test.
 
 ## Target users
 

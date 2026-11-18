@@ -24,12 +24,12 @@
  {"id":"protect","title":"Ovia Protect","items":[
   {"title":"Overview","slug":"protect"},
   {"title":"Problem Definition","slug":"protect","href":"/protect#problem-definition"},
-  {"title":"Proposed User Experience","slug":"protect/user-experience"},
-  {"title":"Product Scope","slug":"protect/scope"},
+  {"title":"User Experience","slug":"protect/user-experience"},
+  {"title":"Beta Scope","slug":"protect/scope"},
+  {"title":"Development Status","slug":"protect/scope","href":"/protect/scope#development-status"},
   {"title":"Wallet Permissions and Approvals","slug":"protect/approvals"},
   {"title":"Technical Design","slug":"protect/technical-design"},
-  {"title":"Security Considerations","slug":"protect/security"},
-  {"title":"MVP Development Status","slug":"protect/scope","href":"/protect/scope#mvp-development-status"},
+  {"title":"Security and Privacy","slug":"protect/security"},
   {"title":"Known Limitations","slug":"protect/security","href":"/protect/security#known-limitations"}
  ]},
  {"id":"network","title":"Ovia Network","items":[

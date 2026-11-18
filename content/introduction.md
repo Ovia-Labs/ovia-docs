@@ -9,7 +9,7 @@ related: [ecosystem, status, whitepaper/executive-summary]
 
 Ovia Labs is an independent, early-stage technology initiative. We focus on one practical question that most crypto users face every week: *what am I about to agree to, and what have I already agreed to?*
 
-We do not operate a live product yet. Our first product, **Ovia Protect**, is in the requirements (PRD) phase. Everything else in our ecosystem is research or a proposal. We publish these docs early so that our reasoning, our constraints and our progress can be checked.
+Our first product, **Ovia Protect**, is live in public beta at [protect.ovialabs.xyz](https://protect.ovialabs.xyz). Everything else in our ecosystem is research or a proposal. We publish these docs early so that our reasoning, our constraints and our progress can be checked.
 
 ## The problem we work on
 
@@ -21,7 +21,7 @@ The information is public, but it is technical and scattered. Most people cannot
 
 | Component | What it is | Status |
 |---|---|---|
-| Ovia Protect | A read-only tool that shows active token approvals for a wallet address, starting with ERC-20 tokens on Ethereum Mainnet | {{status:prd}} |
+| Ovia Protect | A read-only tool that shows active token approvals for a wallet address, starting with ERC-20 tokens on Ethereum Mainnet | {{status:beta}} |
 | Ovia Network | A research direction: security information checked by several independent parties and published so anyone can verify it | {{status:future}} |
 | OVIA Token | An exploratory idea for a token that might support Ovia Network, if the network is ever built | {{status:proposed}} |
 
@@ -30,10 +30,10 @@ The information is public, but it is technical and scattered. Most people cannot
 ## How we work
 
 - **Start with something useful.** Ovia Protect has to be valuable on its own, without a network or a token.
-- **Read-only by design.** The first version works from a public address. It does not ask you to connect a wallet, sign a message or send a transaction.
-- **Verify, then show.** Results are meant to be checked against the blockchain itself before they are displayed. An empty or incomplete result is never presented as "safe".
+- **Read-only by design.** The beta works from a public address. It does not ask you to connect a wallet, sign a message or send a transaction.
+- **Verify, then show.** Results are checked against the blockchain itself before they are displayed. An empty or incomplete result is never presented as "safe".
 - **Zero additional cost while we validate.** Early work avoids paid services, API keys and databases, which keeps the product honest about what free, public infrastructure can do.
 - **Say what is missing.** Limitations, risks and open questions are documented next to the plans.
 
 > [!STATUS] Where things stand
-> As of 17 November 2026, Ovia Labs has a brand identity, a new website and this documentation prepared for launch, and has completed one feasibility test for Ovia Protect. No product, network or token is live.
+> As of 18 November 2026, Ovia Labs has a live website, this documentation and Ovia Protect in public beta. No network or token exists.

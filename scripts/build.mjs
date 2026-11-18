@@ -21,7 +21,7 @@ const urlOf=slug=>slug?'/'+slug:'/';
 
 export const STATUS={
  completed:'Completed','in-progress':'In Progress',planned:'Planned',research:'Research',conditional:'Conditional',
- dev:'In Development',prd:'PRD Phase',proposed:'Proposed',future:'Future Concept','not-specified':'Not Yet Specified',draft:'Draft',live:'Live'
+ dev:'In Development',prd:'PRD Phase',proposed:'Proposed',future:'Future Concept','not-specified':'Not Yet Specified',draft:'Draft',live:'Live',beta:'Public Beta'
 };
 const badge=(k,extra='')=>STATUS[k]?`<span class="status s-${k}${extra}"><i aria-hidden="true"></i>${STATUS[k]}</span>`:'';
 
@@ -166,6 +166,7 @@ ${page.slug==='404'?'<meta name="robots" content="noindex">':`<link rel="canonic
   <a href="/whitepaper"${page.slug.startsWith('whitepaper')?' aria-current="true"':''}>Whitepaper</a>
   <a href="/roadmap"${page.slug==='roadmap'?' aria-current="true"':''}>Roadmap</a>
   <a href="${MAIN}" class="ext">ovialabs.xyz<span aria-hidden="true"> ↗</span></a>
+  <a href="https://protect.ovialabs.xyz" class="launch">Launch Protect</a>
  </nav>
  <button type="button" class="iconBtn themeBtn" aria-label="Change appearance"><svg class="tSun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="tMoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="tSys" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></button>
 </header>

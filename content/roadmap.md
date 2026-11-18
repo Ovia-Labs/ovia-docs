@@ -9,15 +9,15 @@ related: [whitepaper/roadmap, status, protect/scope]
 
 ## Current phase
 
-Ovia Labs is in **Phase 01: Foundation & Product Definition**. The brand and the PRD-010 data-source feasibility test are complete; the website, this documentation and the Ovia Protect PRD are in progress. The phase ends when the PRD is approved with a validated, zero-cost way to discover approvals.
+Ovia Labs is in **Phase 03: Protect Validation & Product Expansion**. Phases 01 and 02 are complete: the website and these docs are live, and Ovia Protect has been in public beta at [protect.ovialabs.xyz](https://protect.ovialabs.xyz) since 18 November 2026. The next step is revoking approvals inside Ovia Protect with the user’s own wallet.
 
 ## Ovia Protect MVP
 
-Phase 02 builds the first version under the [MVP scope](/protect/scope): read-only, Ethereum Mainnet, ERC-20 allowances, every displayed allowance verified on-chain, no stored scans. It starts only after Phase 01’s gate. It ends when the accuracy and coverage tests in [whitepaper chapter 6](/whitepaper/security-privacy-limitations#security-validation-requirements-before-release) pass.
+Phase 02 built the first version under the [beta scope](/protect/scope): read-only, Ethereum Mainnet, ERC-20 allowances, every displayed allowance verified on-chain, no stored scans. It was released as a public beta on 18 November 2026. The accuracy and coverage tests in [whitepaper chapter 6](/whitepaper/security-privacy-limitations#security-validation-requirements-before-release) moved to Phase 03, and must pass before Ovia Protect leaves beta.
 
 ## Future product development
 
-Phase 03 validates Ovia Protect with users, publishes measured limitations and arranges an independent review. Extensions such as Permit2 sub-allowances, NFT operator approvals or additional networks are considered here, based on evidence from use.
+Phase 03 is under way. It validates Ovia Protect with beta users, adds revoking with the user’s own wallet, publishes measured limitations and arranges an independent review. Extensions such as Permit2 sub-allowances, NFT operator approvals or additional networks are considered here, based on evidence from use.
 
 ## Ovia Network research
 
@@ -31,9 +31,9 @@ Phase 05 is conditional on a positive Phase 04 assessment. Only then would the n
 
 | From | To | Gate |
 |---|---|---|
-| Phase 01 | Phase 02 | PRD approved; discovery approach selected and its coverage measured |
-| Phase 02 | Phase 03 | MVP passes accuracy and coverage tests |
-| Phase 03 | Phase 04 | Public release with documented coverage and independent review |
+| Phase 01 | Phase 02 | Requirements approved; discovery approach selected. Met |
+| Phase 02 | Phase 03 | Working public beta. Met on 18 November 2026 |
+| Phase 03 | Phase 04 | Ovia Protect leaves beta: coverage measured and published, independent review completed |
 | Phase 04 | Phase 05 | Published research assessment recommends proceeding |
 
 Changes to phases or gates are recorded in the [Changelog](/resources/changelog).

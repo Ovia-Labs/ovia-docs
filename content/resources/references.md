@@ -39,5 +39,5 @@ These are listed for context so readers can act today. Their inclusion is not an
 
 | Document | Status | Availability |
 |---|---|---|
-| Ovia Protect PRD | {{status:in-progress}} | Internal |
+| Ovia Protect PRDs | {{status:in-progress}} | Internal. V1 requirements are implemented in the public beta |
 | PRD-010 data-source feasibility test | {{status:completed}} | Internal; findings summarised in [Technical design](/protect/technical-design#prd-010-findings) |

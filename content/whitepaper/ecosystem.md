@@ -1,6 +1,6 @@
 ---
 title: 3. The Ovia Labs Ecosystem
-description: How Ovia Protect, Ovia Network and the OVIA Token relate, and which parts are designed versus conceptual.
+description: How Ovia Protect, Ovia Network and the OVIA Token relate, and which parts are live versus conceptual.
 status: draft
 related: [ecosystem, whitepaper/ovia-network, whitepaper/ovia-token]
 ---
@@ -11,7 +11,7 @@ The Ovia Labs ecosystem consists of three components with very different levels 
 
 | Component | Role | Maturity | Classification |
 |---|---|---|---|
-| Ovia Protect | User-facing approval visibility | Requirements and feasibility testing | Confirmed decision (definition), technical proposal (design) |
+| Ovia Protect | User-facing approval visibility | Public beta since 18 November 2026 | Established fact |
 | Ovia Network | Independent verification of security data | No design | Future vision |
 | OVIA Token | Possible coordination and incentive mechanism | No design | Future vision, conditional |
 
@@ -28,7 +28,7 @@ Each step depends on evidence from the previous one. None is guaranteed.
 
 ## What is being designed, and what is conceptual
 
-**Being designed: Ovia Protect.** Its product definition, an Ethereum ERC-20 approval scanner, is confirmed. Its working constraints for validation are documented: zero additional cost, no API keys, no stored scans, no wallet connection, Ethereum Mainnet only. Its architecture is a proposal informed by the first feasibility test.
+**Live in beta: Ovia Protect.** An Ethereum ERC-20 approval scanner, released as a public beta on 18 November 2026. It runs under the documented constraints: zero additional cost, no API keys, no stored scans, no wallet connection, Ethereum Mainnet only. Its architecture was informed by the first feasibility test.
 
 **Conceptual: Ovia Network.** It is a research question, not a protocol. Participants, trust model, data formats and incentives are all open.
 

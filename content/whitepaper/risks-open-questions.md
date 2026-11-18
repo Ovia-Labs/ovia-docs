@@ -28,12 +28,12 @@ related: [whitepaper/security-privacy-limitations, whitepaper/roadmap, resources
 
 **Ovia Protect**
 
-1. Which discovery source, or combination, gives adequate coverage for free?
+1. Does the beta’s discovery source give adequate coverage? It is in use; its coverage has not been measured yet.
 2. What coverage is “adequate”, and how is it measured and shown?
-3. Should the first version run in the browser or through a stateless proxy?
-4. Should Permit2 allowances be in the first version?
+3. ~~Should the first version run in the browser or through a stateless proxy?~~ Answered: the beta runs entirely in the browser.
+4. ~~Should Permit2 allowances be in the first version?~~ Answered: not in the beta. Whether to add them later is open.
 5. Where should spender labels come from, and how are they kept honest?
-6. Should the product link to revocation tools, guide users to their wallet, or offer revocation itself in a later version?
+6. ~~Should the product link to revocation tools or offer revocation itself?~~ Answered: the beta links to Revoke.cash; revoking through the user’s own wallet inside Ovia Protect is planned next.
 
 **Ovia Network**
 

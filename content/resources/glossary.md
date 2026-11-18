@@ -15,7 +15,7 @@ related: [protect/approvals, web3-security, resources/faq]
 
 **Block.** A batch of transactions added to the chain. Reads can be pinned to a block number so that results are reproducible.
 
-**Discovery.** In Ovia Protect’s design: finding candidate (token, spender) pairs for an owner. Distinct from verification.
+**Discovery.** In Ovia Protect: finding candidate (token, spender) pairs for an owner. Distinct from verification.
 
 **EIP / ERC.** Ethereum Improvement Proposal; an ERC (Ethereum Request for Comments) is an application-level standard such as ERC-20.
 
@@ -59,4 +59,4 @@ related: [protect/approvals, web3-security, resources/faq]
 
 **Unlimited approval.** An allowance set to the maximum value (2²⁵⁶ − 1), letting the spender move any amount of that token.
 
-**Verification.** In Ovia Protect’s design: confirming a candidate allowance on-chain with `eth_call` at a recorded block.
+**Verification.** In Ovia Protect: confirming a candidate allowance on-chain with `eth_call` at a recorded block.

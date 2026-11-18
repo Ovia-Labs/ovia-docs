@@ -1,6 +1,6 @@
 ---
 title: Ovia Labs — Building a More Verifiable Web3
-description: Whitepaper v0.1 (Draft). A product and protocol vision for Web3 security, transparency and verification.
+description: Whitepaper v0.2 (Draft). A product and protocol vision for Web3 security, transparency and verification.
 lead: A Product and Protocol Vision for Web3 Security, Transparency and Verification.
 status: draft
 related: [whitepaper/executive-summary, roadmap, resources/changelog]
@@ -12,7 +12,7 @@ related: [whitepaper/executive-summary, roadmap, resources/changelog]
 
 This whitepaper describes what Ovia Labs is building, why, and in what order. It is a technical and product document, not a token sale document. It does not offer anything for sale and makes no promise of financial return.
 
-Version 0.1 is an initial draft, published while Ovia Protect is in the requirements phase. Large parts of it describe proposals and open research questions. We publish it early so the reasoning can be reviewed before it hardens into decisions.
+Version 0.1 was published while Ovia Protect was in its requirements phase. Version 0.2 updates the paper for the Ovia Protect public beta, released on 18 November 2026: decisions that the beta settled are now described as such. Large parts of the paper still describe proposals and open research questions. We publish it early so the reasoning can be reviewed before it hardens into decisions.
 
 ## How statements are classified
 
