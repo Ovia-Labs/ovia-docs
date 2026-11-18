@@ -135,9 +135,17 @@ ${page.slug==='404'?'<meta name="robots" content="noindex">':`<link rel="canonic
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${canonical}">
-<meta property="og:image" content="${SITE}/og-ovia-labs.png">
+<meta property="og:image" content="${SITE}/og-docs.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ovia Labs Docs. How Ovia Labs works.">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(title)}">
+<meta name="twitter:description" content="${esc(desc)}">
+<meta name="twitter:image" content="${SITE}/og-docs.png">
+<meta name="twitter:image:alt" content="Ovia Labs Docs. How Ovia Labs works.">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -262,7 +270,7 @@ export async function buildDocs({quiet=false}={}){
 
  // static files: brand assets from public/
  const pub=path.join(ROOT,'public');
- for(const f of['favicon.ico','favicon-16x16.png','favicon-32x32.png','apple-touch-icon.png','ovia-logo.png','ovia-mark.png','og-ovia-labs.png'])fs.copyFileSync(path.join(pub,f),path.join(OUT,f));
+ for(const f of['favicon.ico','favicon-16x16.png','favicon-32x32.png','apple-touch-icon.png','ovia-logo.png','ovia-mark.png','og-docs.png'])fs.copyFileSync(path.join(pub,f),path.join(OUT,f));
  fs.cpSync(path.join(pub,'fonts'),path.join(OUT,'fonts'),{recursive:true});
  fs.writeFileSync(path.join(OUT,'robots.txt'),`User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
  fs.writeFileSync(path.join(OUT,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${order.map(s=>`  <url><loc>${SITE}${urlOf(s)}</loc><lastmod>${bySlug[s].updated}</lastmod></url>`).join('\n')}\n</urlset>\n`);
